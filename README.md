@@ -11,7 +11,10 @@ Note that although Unicode Emoji UTS#51 follows the versioning system used by th
 ```
 dist/emoji-13.0.txt
 dist/emoji-13.1.txt
+dist/latest.txt
 ```
+
+See [the `dist/` folder](https://github.com/mathiasbynens/rgi-emoji-regex-pattern/tree/main/dist).
 
 ## For maintainers
 

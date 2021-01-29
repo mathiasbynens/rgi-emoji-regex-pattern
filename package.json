@@ -1,6 +1,9 @@
 {
   "name": "rgi-emoji-regex-pattern",
   "private": true,
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "node script/build.js"
   },
