@@ -1,4 +1,4 @@
-# rgi-emoji-regex-pattern
+# rgi-emoji-regex-pattern [![rgi-emoji-regex-pattern on npm](https://img.shields.io/npm/v/rgi-emoji-regex-pattern)](https://www.npmjs.com/package/rgi-emoji-regex-pattern)
 
 _rgi-emoji-regex-pattern_ offers a JavaScript-compatible regular expression pattern to match all RGI emoji symbols and sequences as per the Unicode Standard and [UTS#51](https://www.unicode.org/reports/tr51/). (RGI stands for “recommended for general interchange”.)
 
