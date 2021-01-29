@@ -1,9 +1,9 @@
-# Coverage report
-coverage
-
 # Installed npm modules
 node_modules
 package-lock.json
+
+# npm pack output
+*.tgz
 
 # Folder view configuration files
 .DS_Store

@@ -1,6 +1,7 @@
 {
   "name": "rgi-emoji-regex-pattern",
-  "private": true,
+  "version": "0.0.0",
+  "repository": "mathiasbynens/rgi-emoji-regex-pattern",
   "files": [
     "dist"
   ],
