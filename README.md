@@ -37,6 +37,25 @@ See [the `dist/` folder](https://github.com/mathiasbynens/rgi-emoji-regex-patter
 
 1. Send a pull request with the changes, and get it reviewed & merged.
 
+1. On the `main` branch, bump the version number in `package.json`:
+
+    ```sh
+    npm version patch -m 'Release v%s'
+    ```
+
+    Instead of `patch`, use `minor` or `major` [as needed](https://semver.org/).
+
+    Note that this produces a Git commit + tag.
+
+1. Push the release commit and tag:
+
+    ```sh
+    git push               # push the commit
+    git push origin v0.1.2 # push the tag
+    ```
+
+    Our CI then automatically publishes the new release to npm.
+
 ## Author
 
 | [![twitter/mathias](https://gravatar.com/avatar/24e08a9ea84deb17ae121074d0f17125?s=70)](https://twitter.com/mathias "Follow @mathias on Twitter") |
