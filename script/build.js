@@ -13,14 +13,39 @@ const writeFile = (fileName, contents) => {
   fs.writeFileSync(fileName, contents);
 };
 
-let latestOutput = '';
+const latestOutput = {
+  java: '',
+  javascript: '',
+};
 for (const [version, packageName] of emojiDependencyMap) {
+  const directory = `./dist/emoji-${version}`;
+  if (!fs.existsSync(directory)) {
+    fs.mkdirSync(directory);
+  }
+
   const sequences = getSequences(packageName);
   const trie = new Trie();
   trie.addAll(sequences);
-  const pattern = trie.toString();
-  const output = `${pattern}\n`;
-  latestOutput = output;
-  writeFile(`./dist/emoji-${version}.txt`, output);
+
+  {
+    const pattern = trie.toString();
+    const output = `${pattern}\n`;
+    latestOutput.javascript = output;
+    writeFile(`./dist/emoji-${version}/javascript.txt`, output);
+  }
+
+  {
+    const pattern = trie.toString('u');
+    // TODO: Use replaceAll once it lands in Node.js.
+    const output = `${
+      pattern
+        .replace(/\\u\{/g, '\\x{')
+        .replace(/\\u([a-fA-F0-9]{4})/g, '\\x{$1}')
+    }\n`;
+    latestOutput.java = output;
+    writeFile(`./dist/emoji-${version}/java.txt`, output);
+  }
+
 }
-writeFile(`./dist/latest.txt`, latestOutput);
+writeFile(`./dist/latest/java.txt`, latestOutput.java);
+writeFile(`./dist/latest/javascript.txt`, latestOutput.javascript);
